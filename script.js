@@ -1,27 +1,17 @@
 
 
 
-let i = 1;
-let playersNum;
-
-let answerBoardNode = document.getElementById("answerBoard");
-let answer = []
 
 function fizzBuzz() {
-    playersNum = document.getElementById("input").value;
-    while (i <= playersNum) {
-        if (playersNum % 3 == 0 && playersNum % 5 === 0) {
-            console.log("FizzBuzz")
-        } else if (playersNum % 3 == 0) {
-            console.log(Fizz)
-        } else if (playersNum % 5 == 0) {
-            console.log("Buzz")
-        } else {
-            console.log(i)
+    let text = ""
+    let inputNode = document.getElementById("input").value
+    for (let i = 1; i < inputNode; i++) {
+        if (i % 3 == 0 && i % 5 == 0) { text += "FizzBuzz </br>" }
+        else if (i % 3 == 0) {
+            text += "Fizz </br>"
+        } else if (i % 5 == 0) { text += "Buzz </br>" } else {
+            text += i + " </br>"
         }
-
-        i++
     }
-    fizzBuzz()
-
+    document.getElementById("answerBoard").innerHTML = text;
 }
